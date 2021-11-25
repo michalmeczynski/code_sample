@@ -14,8 +14,8 @@ const TransactionProviderBadgeComponent: FC<TransactionProviderBadgeProps> = (
     provider: TransactionProvider;
     className: string;
   }[] = [
-    { provider: "BLUEMEDIA", className: "bluemedia" },
-    { provider: "PAYPAL", className: "paypal" },
+    { provider: "PROVIDER_A", className: "a" },
+    { provider: "PROVIDER_B", className: "b" },
   ];
 
   const currentBadge = badgeOptions.find(

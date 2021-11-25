@@ -67,8 +67,8 @@ const fetchTransactions = (): Promise<UserDetailsTransactionsResponse> => {
       provider: {
         id: faker.datatype.uuid(),
         name: faker.random.arrayElement<TransactionProvider>([
-          "BLUEMEDIA",
-          "PAYPAL",
+          "PROVIDER_A",
+          "PROVIDER_B",
         ]),
         transactionId: faker.datatype.string(18),
       },
