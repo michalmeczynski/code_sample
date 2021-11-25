@@ -1,0 +1,11 @@
+.transaction_provider_badge {
+  &.bluemedia {
+    color: #fff;
+    background-color: #005abb;
+  }
+
+  &.paypal {
+    color: #fff;
+    background-color: #52bce9;
+  }
+}

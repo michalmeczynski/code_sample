@@ -1,0 +1,12 @@
+.form_error {
+    position: relative;
+    text-align: justify;
+    margin-top: 3px;
+    line-height: 0.75;
+    text-align: initial;
+
+    &__message {
+        @include font-size(0.8rem);
+        color: $formFieldErrorColor;
+    }
+}

@@ -1,0 +1,165 @@
+@import "react-calendar/dist/Calendar.css";
+
+$datePickerPrimary: $primaryColor;
+$datePickerPrimaryActive: $primaryActiveColor;
+$datePickerSecondary: #ddd;
+
+.date_picker {
+  position: relative;
+
+  &.error {
+    border-color: $dangerColor !important;
+  }
+
+  .date_picker_selector {
+    position: absolute;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    margin-top: 45px;
+    right: 0;
+    z-index: 1;
+    border: 2px solid rgba(#000, 0.08);
+    border-radius: 3px;
+    font-family: sans-serif;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.08);
+
+    &.bottom {
+      top: 0;
+    }
+
+    &.top {
+      bottom: 45px;
+    }
+  }
+
+  .date_picker_selector_mode {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-bottom: 1px solid $datePickerSecondary;
+
+    &__button {
+      margin: 2px 4px;
+      padding: 3px 12px;
+      transition: all $transitionTime;
+
+      &:hover, &:focus {
+        .date_picker_selector_mode__button__icon {
+          path {
+            fill: $datePickerPrimaryActive;
+          }
+        }
+        .date_picker_selector_mode__button__title {
+          color: $datePickerPrimaryActive;
+        }
+      }
+
+      &.active {
+        .date_picker_selector_mode__button__icon {
+          path {
+            fill: $datePickerPrimary;
+          }
+        }
+        .date_picker_selector_mode__button__title {
+          color: $datePickerPrimary;
+        }
+      }
+    }
+  }
+
+  .date_picker_calendar {
+    border: none;
+  }
+
+  .react-calendar {
+    &__navigation {
+      margin-bottom: 0;
+
+      *:disabled {
+        opacity: 0.2;
+        background-color: inherit;
+      }
+
+      &__label {
+        text-transform: uppercase;
+        font-weight: 500;
+        line-height: 17px;
+        pointer-events: none;
+
+        &:hover,
+        &:focus {
+          background: $datePickerPrimaryActive;
+        }
+      }
+
+      button {
+        &:enabled {
+          &:hover,
+          &:focus {
+            background-color: inherit;
+            color: $datePickerPrimaryActive;
+          }
+        }
+      }
+    }
+
+    &__tile {
+      height: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 3px;
+
+      &:hover:not(:disabled) {
+        background-color: $datePickerPrimaryActive;
+        abbr {
+          color: #fff;
+        }
+      }
+
+      &:disabled {
+        opacity: 0.2;
+        background-color: inherit;
+      }
+
+      &--now {
+        background-color: #dfdfdf;
+        border: 1px solid #d4d4d4;
+      }
+
+      &--active {
+        background-color: $datePickerPrimary;
+        abbr {
+          color: #fff;
+        }
+      }
+
+      abbr {
+        font-size: 12px;
+      }
+    }
+
+    &__month-view__weekdays__weekday {
+      abbr {
+        font-size: 10px;
+        border-bottom: none;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .date_picker_clock {
+    background-color: #fff;
+    padding: 0px;
+
+    &__content {
+      display: flex;
+      padding: 0 7px;
+    }
+
+    &__input {
+      margin-right: 5px;
+    }
+  }
+}

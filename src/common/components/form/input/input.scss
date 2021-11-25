@@ -1,0 +1,56 @@
+.form_input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: $formFieldBorderRadius;
+  border: $formFieldBorderWidth solid $formFieldBorderColor;
+  background-color: $formFieldBackgroundColor;
+  cursor: default;
+  transition: all $transitionTime;
+
+  &:hover {
+    border-color: $formFieldBorderActiveColor;
+  }
+
+  &.active {
+    transition: $transitionTime all;
+    background-color: $formFieldBackgroundActiveColor;
+    border-color: $formFieldBorderActiveColor;
+  }
+
+  &.error {
+    border-color: $formFieldErrorColor;
+  }
+
+  &.disabled {
+    opacity: $formDisabledOpactity;
+    pointer-events: none;
+  }
+
+  &__input {
+    &::placeholder {
+      opacity: $mediumOpacity;
+    }
+  }
+
+  &__input {
+    margin: 0 8px;
+    @include font-size(0.9rem);
+    border: 0;
+    width: 100%;
+    padding: 7px 0;
+    background: none;
+  }
+
+  &__icon_left {
+    float: left;
+    padding: 0 2px 0 8px;
+    opacity: 0.5;
+  }
+
+  &__icon_right {
+    float: right;
+    margin-right: 8px;
+    opacity: 0.5;
+  }
+}

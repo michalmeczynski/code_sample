@@ -1,0 +1,23 @@
+$formDisabledOpactity: $mediumOpacity;
+$formFieldBorderColor: #dbdbdb;
+$formFieldBorderActiveColor: $primaryColor;
+$formFieldBorderWidth: 2px;
+$formFieldBorderRadius: $borderRadius;
+$formFieldErrorColor: $dangerColor;
+$formFieldBackgroundColor: #fff;
+$formFieldBackgroundActiveColor: #fff;
+
+.form {
+  position: relative;
+  &.is-loading {
+    pointer-events: none;
+  }
+}
+
+@import "./checkbox/checkbox.scss";
+@import "./error/form-error.scss";
+@import "./field/form-field.scss";
+@import "./input/input.scss";
+@import "./wysiwyg-editor/wysiwyg-editor.scss";
+@import "./text-area/text-area.scss";
+@import "./select/select.scss";

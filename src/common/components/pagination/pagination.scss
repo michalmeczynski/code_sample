@@ -1,0 +1,67 @@
+.pagination {
+  display: flex;
+  .pagination_button {
+    background: none;
+    color: $fontPrimaryColor;
+    border: 2px solid rgba(#000, 0.05);
+    border-radius: 3px;
+    min-width: 30px;
+    height: 30px;
+    margin: 2px;
+    transition: all $transitionTime;
+    font-size: 12px;
+
+    &:disabled {
+      opacity: $lowOpacity;
+      pointer-events: none;
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: $primaryColor;
+      border-color: $primaryColor;
+      color: #fff;
+
+      .pagination_button__icon {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  .pagination_go_to {
+    .pagination_go_to_input {
+      width: 60px;
+      border: 2px solid rgba(#000, 0.05);
+      margin: 2px;
+      &__input {
+        padding: 2.5px 0;
+      }
+    }
+  }
+}
+
+.listing_pagination {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 10px;
+
+  @include breakpoint(largescreen) {
+    flex-direction: row;
+  }
+
+  &__description {
+    @include font-size(0.8em);
+    margin-bottom: 5px;
+    text-align: center;
+    @include breakpoint(midscreen) {
+      text-align: left;
+      margin-bottom: 0;
+      font-size: inherit;
+    }
+  }
+}

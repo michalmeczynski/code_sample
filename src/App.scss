@@ -1,0 +1,71 @@
+@import "style/variables.scss";
+@import "style/reset.scss";
+@import "style/typography.scss";
+@import "style/z-index.scss";
+@import "style/mixins/media-query.scss";
+@import "style/mixins/text.scss";
+
+/*
+ * Grid
+ */
+@import "style/grid.min.css";
+
+/*
+ * Fonts
+ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
+
+/*
+ * Common
+ */
+@import "common/components/breadcrumbs/breadcrumbs.scss";
+@import "common/components/button/button.scss";
+@import "common/components/heading/heading.scss";
+@import "common/components/card/card.scss";
+@import "common/components/loader/loader.scss";
+@import "common/components/table/table.scss";
+@import "common/components/badge/badge.scss";
+@import "common/components/form/form.scss";
+@import "common/components/aside/aside.scss";
+@import "common/components/date-picker/date-picker.scss";
+@import "common/components/date-time-picker/date-time-picker.scss";
+@import "common/components/time-picker/time-picker.scss";
+@import "common/components/page/loader/page-loader.scss";
+@import "common/components/pagination/pagination.scss";
+@import "common/components/switch/switch.scss";
+@import "common/components/modal/modal.scss";
+
+/*
+ * Shared
+ */
+
+@import "shared/transaction/badge/provider/transaction-provider-badge.scss";
+@import "shared/event/badge/event-type-badge.scss";
+
+/*
+ * Modules
+ */
+@import "modules/aside-panel/aside-panel.scss";
+@import "modules/header/header.scss";
+
+
+* {
+  outline: none;
+}
+
+.App {
+  display: flex;
+  background-color: $pageBackgroundColor;
+  .page_content {
+    padding: $pagePadding;
+    position: relative;
+    width: 100%;
+
+    @include breakpoint(midscreen) {
+      left: #{$asidePanelWidth};
+      width: calc(100% - #{$asidePanelWidth});
+    }
+
+    min-height: 100vh;
+  }
+}

@@ -1,0 +1,33 @@
+$asidePanelHeaderHeight: 65px;
+
+.aside_panel_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #171724;
+  padding: 10px;
+  padding-bottom: 10px;
+  height: $asidePanelHeaderHeight;
+
+  &__app_name {
+    color: #fff;
+    text-decoration: none;
+    transition: all $transitionTime;
+    @include font-size(1.25rem);
+
+    &:hover,
+    &:focus {
+      color: $primaryColor;
+    }
+  }
+
+  .aside_panel_header_close_button {
+    padding: 3px;
+    height: 100%;
+    &__icon {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}

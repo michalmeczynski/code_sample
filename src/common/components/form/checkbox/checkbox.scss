@@ -1,0 +1,87 @@
+.checkbox {
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+
+  &.disabled {
+    opacity: $mediumOpacity;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    .checkbox__input {
+      ~ .checkbox__checkmark {
+        border-color: $primaryColor;
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__input {
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
+
+    &:checked,
+    &:checked:hover {
+      ~ .checkbox__checkmark {
+        background: #fff;
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__checkmark {
+    transition: $transitionTime;
+    border-radius: $formFieldBorderRadius;
+    border: $formFieldBorderWidth solid $formFieldBorderColor;
+    height: 20px;
+    width: 20px;
+    margin-left: 1px;
+
+    &::after {
+      border: solid #000;
+      border-width: 0 1px 1px 0;
+      content: "";
+      display: none;
+      transform: rotate(45deg);
+      width: 6px;
+      height: 10px;
+      margin-top: 1px;
+      margin-left: 5px;
+    }
+
+    &.active {
+      transition: $transitionTime all;
+      border-color: $formFieldBorderActiveColor;
+      background: #fff;
+    }
+
+    &.error {
+      border-color: $formFieldErrorColor;
+
+      &.checkbox__checkmark::after {
+        border-color: $formFieldErrorColor !important;
+      }
+    }
+  }
+
+  &__title {
+    margin-left: 10px;
+    @include font-size(0.9rem);
+    width: calc(100% - 30px);
+  }
+
+  &__required {
+    margin-left: 3px;
+    color: $dangerColor;
+  }
+}

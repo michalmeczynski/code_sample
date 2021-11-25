@@ -1,0 +1,23 @@
+.form_field {
+  margin: 16px 0;
+
+  .form_field_label {
+    @include font-size(1rem);
+    font-weight: 500;
+    cursor: default;
+  }
+
+  .form_field_required {
+    &__wrapper {
+      margin-left: 3px;
+    }
+
+    &__dot {
+      color: $dangerColor;
+    }
+  }
+
+  &__content {
+    margin-top: 3px;
+  }
+}

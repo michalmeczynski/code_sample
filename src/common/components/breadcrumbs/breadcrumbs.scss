@@ -1,0 +1,59 @@
+$breadcrumbColor: #6d6d7c;
+$breadcrumbActiveColor: rgb(79, 133, 235);
+$breadcrumbSeparatorColor: #b8b8cf;
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin: 0 5px 15px;
+
+  .breadcrumb_item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    .default_active {
+      color: $breadcrumbColor;
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+      .breadcrumb_item__text {
+        color: $breadcrumbActiveColor;
+      }
+
+      .breadcrumb_item__icon {
+        path {
+          fill: $breadcrumbActiveColor;
+        }
+      }
+    }
+
+    &__text {
+      line-height: 14px;
+      color: $breadcrumbColor;
+    }
+
+    &__icon {
+      margin-right: 5px;
+      height: 16px;
+      path {
+        fill: $breadcrumbColor;
+      }
+    }
+  }
+
+  .breadcrumb_separator {
+    margin: 0 15px;
+    &__icon {
+      path {
+        fill: $breadcrumbSeparatorColor;
+      }
+    }
+  }
+
+  .breadcrumb_loader {
+    
+  }
+}

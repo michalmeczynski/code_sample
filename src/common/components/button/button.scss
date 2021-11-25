@@ -1,0 +1,163 @@
+$buttonBorderRadius: $borderRadius;
+
+$buttonPrimaryBackgroundColor: $primaryColor;
+$buttonPrimaryBackgroundActiveColor: $primaryActiveColor;
+$buttonPrimaryColor: #fff;
+
+$buttonBrandBackgroundColor: $brandColor;
+$buttonBrandBackgroundActiveColor: $brandActiveColor;
+$buttonBrandColor: #fff;
+
+$buttonDangerBackgroundColor: $dangerColor;
+$buttonDangerBackgroundActiveColor: $dangerActiveColor;
+$buttonDangerColor: #fff;
+
+$buttonSuccessBackgroundColor: $successColor;
+$buttonSuccessBackgroundActiveColor: $successActiveColor;
+$buttonSuccessColor: #fff;
+
+$buttonWarningBackgroundColor: $warningColor;
+$buttonWarningBackgroundActiveColor: $warningActiveColor;
+$buttonWarningColor: #fff;
+
+$buttonInfoBackgroundColor: $infoColor;
+$buttonInfoBackgroundActiveColor: $infoActiveColor;
+$buttonInfoColor: #fff;
+
+.button {
+  padding: 10px 12px;
+  text-decoration: none;
+  border: none;
+  background: none;
+  display: block;
+  @include font-size(0.8rem);
+  border-radius: $buttonBorderRadius;
+  position: relative;
+  background: none;
+  transition: background-color $transitionTime;
+  width: fit-content;
+
+  &.primary {
+    background-color: $buttonPrimaryBackgroundColor;
+    color: $buttonPrimaryColor;
+
+    &:hover,
+    &:focus {
+      background-color: $buttonPrimaryBackgroundActiveColor;
+    }
+
+    .button_content {
+      color: $buttonPrimaryColor;
+    }
+  }
+
+  &.brand {
+    background-color: $buttonBrandBackgroundColor;
+    color: $buttonBrandColor;
+
+    &:hover,
+    &:focus {
+      background-color: $buttonBrandBackgroundActiveColor;
+    }
+
+    .button_content {
+      color: $buttonBrandColor;
+    }
+  }
+
+  &.danger {
+    background-color: $buttonDangerBackgroundColor;
+    color: $buttonDangerColor;
+
+    &:hover,
+    &:focus {
+      background-color: $buttonDangerBackgroundActiveColor;
+    }
+
+    .button_content {
+      color: $buttonDangerColor;
+    }
+  }
+
+  &.success {
+    background-color: $buttonSuccessBackgroundColor;
+    color: $buttonSuccessColor;
+
+    &:hover,
+    &:focus {
+      background-color: $buttonSuccessBackgroundActiveColor;
+    }
+
+    .button_content {
+      color: $buttonSuccessColor;
+    }
+  }
+
+  &.warning {
+    background-color: $buttonWarningBackgroundColor;
+    color: $buttonWarningColor;
+
+    &:hover,
+    &:focus {
+      background-color: $buttonWarningBackgroundActiveColor;
+    }
+
+    .button_content {
+      color: $buttonWarningColor;
+    }
+  }
+
+  &.info {
+    background-color: $buttonInfoBackgroundColor;
+    color: $buttonInfoColor;
+
+    &:hover,
+    &:focus {
+      background-color: $buttonInfoBackgroundActiveColor;
+    }
+
+    .button_content {
+      color: $buttonInfoColor;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  &.loading {
+    pointer-events: none;
+  }
+
+  .button_content {
+    position: relative;
+    width: max-content;
+
+    &.loading {
+      visibility: hidden;
+    }
+  }
+
+  .button_loader {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+    left: calc(50% - 10px);
+    border: 2px solid #fff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: 0.6s button_loader linear infinite;
+  }
+
+  @keyframes button_loader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

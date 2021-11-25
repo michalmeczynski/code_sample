@@ -1,0 +1,63 @@
+$badgeBorderRadius: $borderRadius;
+
+$badgePrimaryBackgroundColor: $primaryColor;
+$badgePrimaryColor: #fff;
+
+$badgeBrandBackgroundColor: $brandColor;
+
+$badgeBrandColor: #fff;
+
+$badgeDangerBackgroundColor: $dangerColor;
+$badgeDangerColor: #fff;
+
+$badgeSuccessBackgroundColor: $successColor;
+$badgeSuccessColor: #fff;
+
+$badgeWarningBackgroundColor: $warningColor;
+$badgeWarningColor: #fff;
+
+$badgeInfoBackgroundColor: $infoColor;
+$badgeInfoColor: #fff;
+
+.badge {
+  width: min-content;
+  padding: 5px 8px;
+  border-radius: $badgeBorderRadius;
+  font-weight: 500;
+  @include font-size(0.7rem);
+
+  &.primary {
+    background-color: $badgePrimaryBackgroundColor;
+    color: $badgePrimaryColor;
+  }
+
+  &.brand {
+    background-color: $badgeBrandBackgroundColor;
+    color: $badgeBrandColor;
+  }
+
+  &.danger {
+    background-color: $badgeDangerBackgroundColor;
+    color: $badgeDangerColor;
+  }
+
+  &.danger {
+    background-color: $badgeDangerBackgroundColor;
+    color: $badgeDangerColor;
+  }
+
+  &.success {
+    background-color: $badgeSuccessBackgroundColor;
+    color: $badgeSuccessColor;
+  }
+
+  &.warning {
+    background-color: $badgeWarningBackgroundColor;
+    color: $badgeWarningColor;
+  }
+
+  &.info {
+    background-color: $badgeInfoBackgroundColor;
+    color: $badgeInfoColor;
+  }
+}

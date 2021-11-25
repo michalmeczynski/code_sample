@@ -1,0 +1,102 @@
+.select {
+  width: 100%;
+  &.error {
+    .select__control {
+      border-color: $formFieldErrorColor !important;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .select__control {
+      border-color: $formFieldBorderActiveColor !important;
+    }
+  }
+
+  &__control {
+    min-height: 37px !important;
+
+    border: $formFieldBorderWidth solid $formFieldBorderColor !important;
+    border-radius: $formFieldBorderRadius;
+    background: $formFieldBackgroundColor;
+
+    &--is-focused {
+      border-color: $formFieldBorderActiveColor !important;
+      box-shadow: none !important;
+      background: $formFieldBackgroundActiveColor;
+    }
+
+    &--is-disabled {
+      opacity: $formDisabledOpactity;
+      pointer-events: none;
+      background-color: unset !important;
+    }
+  }
+
+  &__value-container {
+    padding: 0 5px !important;
+    margin: 0 !important;
+    position: relative !important;
+  }
+
+  &__placeholder {
+    font-size: 14px !important;
+    cursor: text;
+    opacity: $mediumOpacity;
+  }
+
+  &__dropdown-indicator {
+    svg {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+
+      path {
+        width: 100%;
+        height: 100%;
+        fill: $fontPrimaryColor !important;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__input {
+    font-size: 14px !important;
+  }
+
+  &__clear-indicator {
+    svg {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      color: $fontPrimaryColor !important;
+
+      path {
+        width: 100%;
+        height: 100%;
+        stroke: $fontPrimaryColor !important;
+      }
+    }
+  }
+
+  &__indicators {
+    height: 34px !important;
+  }
+
+  &__indicator-separator {
+    display: none;
+  }
+
+  &__multi-value {
+    &__remove {
+      &:hover {
+        transition: $transitionTime all;
+      }
+    }
+  }
+
+  &__single-value {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,38 @@
+/*
+ * Global
+ */
+$fontFamily: "Poppins", sans-serif;
+$transitionTime: 0.25s;
+$headerHeight: 65px;
+$pagePadding: calc(18px + #{$headerHeight}) 20px 18px 20px;
+
+$pageBackgroundColor: #e4e8eb;
+$fontPrimaryColor: #303657;
+
+$primaryColor: #3699ff;
+$primaryActiveColor: #228af1;
+$brandColor: #f549a8;
+$brandActiveColor: #e6228e;
+$dangerColor: #df4f5d;
+$dangerActiveColor: #f13447;
+$successColor: #1bc5bd;
+$successActiveColor: #14b4ac;
+$warningColor: #dfb436;
+$warningActiveColor: #d1a111;
+$infoColor: #26c0d3;
+$infoActiveColor: #17b2c7;
+
+$borderRadius: 4px;
+$lowOpacity: 0.2;
+$mediumOpacity: 0.5;
+$highOpacity: 0.8;
+
+/*
+ * Breakpoints
+ */
+$xsmallscreen: 400px !default;
+$smallscreen: 480px !default;
+$midscreen: 768px !default;
+$largescreen: 992px !default;
+$xlargescreen: 1200px !default;
+$xxlargescreen: 1600px !default;

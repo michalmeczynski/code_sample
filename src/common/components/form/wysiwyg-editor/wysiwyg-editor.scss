@@ -1,0 +1,47 @@
+@import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
+.wysiwyg_editor {
+  border-radius: $formFieldBorderRadius;
+  border: $formFieldBorderWidth solid $formFieldBorderColor;
+  background-color: $formFieldBackgroundColor;
+  transition: $transitionTime all;
+  font-family: $fontFamily;
+
+  &:hover {
+    border-color: $formFieldBorderActiveColor;
+  }
+
+  &.active {
+    background-color: $formFieldBackgroundActiveColor;
+    border-color: $formFieldBorderActiveColor;
+  }
+
+  &.error {
+    border-color: $formFieldErrorColor;
+  }
+
+  .wysiwyg_editor_toolbar {
+    border-bottom: 1px solid rgba(#000, 0.1);
+
+    .rdw-option-wrapper,
+    .rdw-dropdown-selectedtext {
+      border-radius: $borderRadius;
+
+      &:hover,
+      &:focus {
+        box-shadow: none;
+      }
+
+      &.rdw-option-active {
+        border-color: $primaryColor;
+        border-width: 2px;
+        // background-color: $primaryColor;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .wysiwyg_editor_field {
+    margin: 0 10px;
+  }
+}

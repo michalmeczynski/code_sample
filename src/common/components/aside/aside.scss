@@ -1,0 +1,112 @@
+$asideWidth: 365px;
+$asidePageOverlayBackgroundColor: rgba(#000, 0.2);
+
+.aside_overlay {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  background-color: $asidePageOverlayBackgroundColor;
+  top: 0;
+  left: 0;
+
+  &.open {
+    display: block;
+  }
+}
+
+.aside {
+  transition: right 500ms;
+  position: fixed;
+  top: 0;
+  right: -#{$asideWidth};
+  background-color: #fff;
+  width: $asideWidth;
+  height: 100vh;
+  z-index: 100;
+  border-left: 1px solid #fafafa;
+
+  &.open {
+    right: 0;
+    box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .aside_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    &__title {
+      @include font-size(1.2rem);
+      font-weight: 500;
+      margin-top: 5px;
+      @include text-ellipsis(2);
+    }
+
+    &__subtitle {
+      @include font-size(1rem);
+      @include text-ellipsis(1);
+    }
+
+    &__close {
+      &__button {
+        margin-left: 5px;
+        background-color: #e9e9e9;
+
+        &:hover,
+        &focus {
+          background-color: $dangerColor;
+
+          .aside_header__close__icon {
+            path {
+              fill: #fff;
+            }
+          }
+        }
+      }
+
+      &__icon {
+        path {
+          fill: rgb(122, 122, 122);
+        }
+      }
+    }
+  }
+
+  .aside_content {
+    padding: 12px 20px;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .aside_footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .aside_overlay_loader_wrapper {
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 40px);
+  }
+
+  .aside_loader_wrapper {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: calc(100% - 40px);
+  }
+}

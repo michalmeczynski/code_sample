@@ -1,0 +1,34 @@
+@import "node_modules/rfs/scss.scss";
+
+h1 {
+    @include font-size(2.5rem);
+}
+h2 {
+    @include font-size(2.2rem);
+}
+h3 {
+    @include font-size(1.8rem);
+}
+h4 {
+    @include font-size(1.4rem);
+}
+h5 {
+    @include font-size(1rem);
+}
+p {
+    @include font-size(1rem);
+}
+
+small {
+    @include font-size(0.8rem);
+}
+
+span {
+    font-size: inherit;
+}
+
+* {
+    @include font-size(1rem);
+    font-family: $fontFamily;
+    color: $fontPrimaryColor;
+}

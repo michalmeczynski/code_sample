@@ -1,0 +1,32 @@
+@import "./header/aside-panel-header.scss";
+@import "./menu/aside-panel-menu.scss";
+
+$asidePanelBackgroundColor: #1e1e2d;
+$asidePanelMobileWidth: 100vw;
+$asidePanelWidth: 265px;
+
+.aside_panel {
+  width: $asidePanelMobileWidth;
+  background-color: $asidePanelBackgroundColor;
+  height: 100vh;
+  max-height: 100vh;
+  z-index: $asideMenuPanelZIndex;
+  position: fixed;
+
+  @include breakpoint(midscreen) {
+    width: $asidePanelWidth;
+  }
+
+  &.fixed {
+    left: -#{$asidePanelMobileWidth};
+    @include breakpoint(midscreen) {
+      width: $asidePanelWidth;
+    }
+ 
+    transition: left 1s;
+  }
+  
+  &.expanded {
+    left: 0;
+  }
+}

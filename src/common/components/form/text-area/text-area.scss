@@ -1,0 +1,73 @@
+.text_area {
+  width: 100%;
+  position: relative;
+  padding: 7px 0;
+  display: flex;
+  align-items: center;
+  border: $formFieldBorderWidth solid $formFieldBorderColor;
+  border-radius: $borderRadius;
+  background: $formFieldBackgroundColor;
+  cursor: default;
+
+  &:hover {
+    border-color: $formFieldBorderActiveColor;
+  }
+
+  &.active {
+    transition: $transitionTime all;
+    border-color: $primaryActiveColor;
+    background: #fff;
+  }
+
+  &.error {
+    border-color: $dangerColor;
+  }
+
+  &.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &__input {
+    background: none;
+    border: 0;
+    width: 100%;
+    margin: 0 10px;
+    font-size: 16px;
+    position: relative;
+    min-height: 25px;
+  }
+
+  &__error {
+    position: absolute;
+    text-align: justify;
+    margin-top: -23px;
+    line-height: 0.7;
+    text-align: initial;
+
+    .svg-icon {
+      padding: 0 7px 0 3px;
+      path {
+        fill: $dangerColor;
+      }
+    }
+    &-message {
+      font-size: 12px;
+      color: $dangerColor;
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 30px;
+    margin-bottom: 4px;
+    opacity: 0.4;
+
+    &.error {
+      color: $dangerColor;
+      opacity: 0.9;
+    }
+  }
+}
